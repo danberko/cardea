@@ -11,7 +11,7 @@ export function Header({ onMenuClick }: HeaderProps) {
 
   return (
     <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-xs sm:gap-x-6 sm:px-6 lg:px-8">
-      <button type="button" className="-m-2.5 p-2.5 text-gray-700 lg:hidden" onClick={onMenuClick}>
+      <button type="button" className="-m-2.5 p-2.5 text-gray-700 lg:hidden cursor-pointer" onClick={onMenuClick}>
         <span className="sr-only">Open sidebar</span>
         <svg className="size-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -35,7 +35,7 @@ export function Header({ onMenuClick }: HeaderProps) {
         </form>
         
         <div className="flex items-center gap-x-4 lg:gap-x-6">
-          <button type="button" className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
+          <button type="button" className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500 cursor-pointer">
             <span className="sr-only">View notifications</span>
             <svg className="size-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
@@ -47,7 +47,7 @@ export function Header({ onMenuClick }: HeaderProps) {
           <div className="relative">
             <button 
               type="button" 
-              className="-m-1.5 flex items-center p-1.5" 
+              className="-m-1.5 flex items-center p-1.5 cursor-pointer" 
               id="user-menu-button" 
               aria-expanded={profileDropdownOpen} 
               aria-haspopup="true"
@@ -65,8 +65,8 @@ export function Header({ onMenuClick }: HeaderProps) {
 
             {profileDropdownOpen && (
               <div className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button">
-                <a href="#" className="block px-3 py-1 text-sm/6 text-gray-900 hover:bg-gray-50" role="menuitem">Your profile</a>
-                <a href="#" className="block px-3 py-1 text-sm/6 text-gray-900 hover:bg-gray-50" role="menuitem">Sign out</a>
+                <a href="#" className="block px-3 py-1 text-sm/6 text-gray-900 hover:bg-gray-50 cursor-pointer" role="menuitem">Your profile</a>
+                <a href="#" className="block px-3 py-1 text-sm/6 text-gray-900 hover:bg-gray-50 cursor-pointer" role="menuitem">Sign out</a>
               </div>
             )}
           </div>

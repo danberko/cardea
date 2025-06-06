@@ -18,7 +18,7 @@ export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
         <div className="relative mr-16 flex w-full max-w-xs flex-1">
           {/* Close button */}
           <div className="absolute top-0 left-full flex w-16 justify-center pt-5">
-            <button type="button" className="-m-2.5 p-2.5" onClick={onClose}>
+            <button type="button" className="-m-2.5 p-2.5 cursor-pointer" onClick={onClose}>
               <span className="sr-only">Close sidebar</span>
               <svg className="size-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -39,15 +39,15 @@ export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
               <ul role="list" className="-mx-2 flex-1 space-y-1">
                 {navigation.map((item) => (
                   <li key={item.name}>
-                    <a
-                      href={item.href}
-                      className={classNames(
-                        item.current
-                          ? 'bg-indigo-50 text-indigo-600'
-                          : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                        'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold'
-                      )}
-                    >
+                                          <a
+                        href={item.href}
+                        className={classNames(
+                          item.current
+                            ? 'bg-indigo-50 text-indigo-600'
+                            : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
+                          'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold cursor-pointer'
+                        )}
+                      >
                       <item.icon className="size-6 shrink-0" aria-hidden="true" />
                       {item.name}
                     </a>

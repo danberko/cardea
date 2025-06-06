@@ -20,7 +20,7 @@ export function Sidebar() {
                   item.current
                     ? 'bg-indigo-50 text-indigo-600 border-indigo-600'
                     : 'text-gray-400 hover:text-gray-600 hover:bg-gray-50',
-                  'group flex gap-x-3 rounded-md p-3 text-sm/6 font-semibold border border-transparent'
+                  'group flex gap-x-3 rounded-md p-3 text-sm/6 font-semibold border border-transparent cursor-pointer'
                 )}
               >
                 <item.icon className="size-6 shrink-0" aria-hidden="true" />

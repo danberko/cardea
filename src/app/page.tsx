@@ -2,8 +2,10 @@
 
 import { DashboardLayout } from '@/components/DashboardLayout';
 import { Badge, BadgeColor } from '@/components/Badge';
+import { ExerciseDrawer } from '@/components/ExerciseDrawer';
 import { getCurrentPhase } from '@/data/trainingPhases';
 import { getExercisesForDate, Exercise } from '@/data/exercises';
+import { getExerciseDescription, ExerciseDescription } from '@/data/exerciseDescriptions';
 import { useState } from 'react';
 
 export default function Dashboard() {
@@ -12,6 +14,10 @@ export default function Dashboard() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date(2025, 5, 9)); // Year, Month (0-based), Day - June 9 = Monday
   const [calendarViewDate, setCalendarViewDate] = useState(new Date(2025, 5, 9));
+  
+  // Modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedExercise, setSelectedExercise] = useState<{exercise: ExerciseDescription, sets: number, reps: string} | null>(null);
 
   // Get current date and phase
   const today = new Date();
@@ -130,7 +136,9 @@ export default function Dashboard() {
 
   const handleTodayClick = () => {
     const today = new Date();
-    setSelectedDate(new Date(today.getFullYear(), today.getMonth(), today.getDate()));
+    const todayDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    setSelectedDate(todayDate);
+    setCalendarViewDate(todayDate);
   };
 
   const handlePreviousMonth = () => {
@@ -143,6 +151,19 @@ export default function Dashboard() {
     const nextMonth = new Date(calendarViewDate);
     nextMonth.setMonth(nextMonth.getMonth() + 1);
     setCalendarViewDate(nextMonth);
+  };
+
+  const handleViewDetails = (exerciseName: string, sets: number, reps: string) => {
+    const exerciseDetails = getExerciseDescription(exerciseName);
+    if (exerciseDetails) {
+      setSelectedExercise({ exercise: exerciseDetails, sets, reps });
+      setIsModalOpen(true);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedExercise(null);
   };
 
   // Function to get phase color based on phase name
@@ -198,9 +219,12 @@ export default function Dashboard() {
             )}
           </div>
         </div>
-        <div className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset">
+        <button 
+          onClick={() => handleViewDetails(exercise.name, exercise.sets, exercise.reps)}
+          className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50 transition-colors cursor-pointer"
+        >
           View details
-        </div>
+        </button>
       </li>
     ));
   };
@@ -223,7 +247,7 @@ export default function Dashboard() {
             <div className="relative flex items-center rounded-md bg-white shadow-xs md:items-stretch">
               <button 
                 type="button" 
-                className="flex h-9 w-12 items-center justify-center rounded-l-md border-y border-l border-gray-300 pr-1 text-gray-400 hover:text-gray-500 focus:relative md:w-9 md:pr-0 md:hover:bg-gray-50"
+                className="flex h-9 w-12 items-center justify-center rounded-l-md border-y border-l border-gray-300 pr-1 text-gray-400 hover:text-gray-500 focus:relative md:w-9 md:pr-0 md:hover:bg-gray-50 cursor-pointer"
                 onClick={handlePreviousDay}
               >
                 <span className="sr-only">Previous day</span>
@@ -233,7 +257,7 @@ export default function Dashboard() {
               </button>
               <button 
                 type="button" 
-                className="hidden border-y border-gray-300 px-3.5 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:relative md:block"
+                className="hidden border-y border-gray-300 px-3.5 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:relative md:block cursor-pointer"
                 onClick={handleTodayClick}
               >
                 Today
@@ -241,7 +265,7 @@ export default function Dashboard() {
               <span className="relative -mx-px h-5 w-px bg-gray-300 md:hidden"></span>
               <button 
                 type="button" 
-                className="flex h-9 w-12 items-center justify-center rounded-r-md border-y border-r border-gray-300 pl-1 text-gray-400 hover:text-gray-500 focus:relative md:w-9 md:pl-0 md:hover:bg-gray-50"
+                className="flex h-9 w-12 items-center justify-center rounded-r-md border-y border-r border-gray-300 pl-1 text-gray-400 hover:text-gray-500 focus:relative md:w-9 md:pl-0 md:hover:bg-gray-50 cursor-pointer"
                 onClick={handleNextDay}
               >
                 <span className="sr-only">Next day</span>
@@ -254,7 +278,7 @@ export default function Dashboard() {
               <div className="relative">
                 <button 
                   type="button" 
-                  className="flex items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50" 
+                  className="flex items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50 cursor-pointer" 
                   id="menu-button" 
                   aria-expanded={isDropdownOpen} 
                   aria-haspopup="true"
@@ -270,14 +294,14 @@ export default function Dashboard() {
                   <div className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
                     <div className="py-1" role="none">
                       <button
-                        className={`${selectedView === 'Home Exercise' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'} block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-900`}
+                        className={`${selectedView === 'Home Exercise' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'} block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-900 cursor-pointer`}
                         role="menuitem"
                         onClick={() => handleViewChange('Home Exercise')}
                       >
                         Home Exercise
                       </button>
                       <button
-                        className={`${selectedView === 'Gym Exercise' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'} block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-900`}
+                        className={`${selectedView === 'Gym Exercise' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'} block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-900 cursor-pointer`}
                         role="menuitem"
                         onClick={() => handleViewChange('Gym Exercise')}
                       >
@@ -289,7 +313,7 @@ export default function Dashboard() {
                 )}
               </div>
               <div className="ml-6 h-6 w-px bg-gray-300"></div>
-              <button type="button" className="ml-6 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Mark complete</button>
+              <button type="button" className="ml-6 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer">Mark complete</button>
             </div>
             <div className="relative ml-6 md:hidden">
               <button type="button" className="-mx-2 flex items-center rounded-full border border-transparent p-2 text-gray-400 hover:text-gray-500" id="menu-0-button" aria-expanded="false" aria-haspopup="true">
@@ -326,7 +350,7 @@ export default function Dashboard() {
             <div className="flex items-center text-center text-gray-900">
               <button 
                 type="button" 
-                className="-m-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500 hover:bg-gray-100 rounded-md transition-colors"
+                className="-m-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500 hover:bg-gray-100 rounded-md transition-colors cursor-pointer"
                 onClick={handlePreviousMonth}
               >
                 <span className="sr-only">Previous month</span>
@@ -337,7 +361,7 @@ export default function Dashboard() {
               <div className="flex-auto text-sm font-semibold">{currentMonth} {currentYear}</div>
               <button 
                 type="button" 
-                className="-m-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500 hover:bg-gray-100 rounded-md transition-colors"
+                className="-m-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500 hover:bg-gray-100 rounded-md transition-colors cursor-pointer"
                 onClick={handleNextMonth}
               >
                 <span className="sr-only">Next month</span>
@@ -379,17 +403,36 @@ export default function Dashboard() {
                   day.isToday ? 'bg-gray-900 font-semibold text-white' : '',
                   day.isSelected && !day.isToday ? 'bg-indigo-600 font-semibold text-white' : ''
                 ].filter(Boolean).join(' ');
+
+                // Get phase for this date
+                const dayPhase = getCurrentPhase(new Date(day.dateTime));
+                const phaseColor = getPhaseColor(dayPhase.phase);
+                
+                // Phase dot color mapping
+                const phaseDotColors: Record<BadgeColor, string> = {
+                  'blue': 'bg-blue-500',
+                  'green': 'bg-green-500', 
+                  'yellow': 'bg-yellow-500',
+                  'red': 'bg-red-500',
+                  'purple': 'bg-purple-500',
+                  'pink': 'bg-pink-500',
+                  'gray': 'bg-gray-500',
+                  'indigo': 'bg-indigo-500'
+                };
                 
                 return (
                   <button 
                     key={`${day.dateTime}-${index}`} 
                     type="button" 
-                    className={buttonClasses}
+                    className={`${buttonClasses} cursor-pointer flex flex-col items-center`}
                     onClick={() => handleDateClick(day.dateTime)}
                   >
                     <time dateTime={day.dateTime} className={timeClasses}>
                       {day.date}
                     </time>
+                    {day.isCurrentMonth && (
+                      <div className={`w-1 h-1 rounded-full mt-0.5 ${phaseDotColors[phaseColor]}`}></div>
+                    )}
                   </button>
                 );
               })}
@@ -397,6 +440,15 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* Exercise Details Drawer */}
+      <ExerciseDrawer
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        exercise={selectedExercise?.exercise || null}
+        sets={selectedExercise?.sets}
+        reps={selectedExercise?.reps}
+      />
     </DashboardLayout>
   );
 }
