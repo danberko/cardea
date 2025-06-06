@@ -41,7 +41,7 @@ A comprehensive Next.js fitness application that provides a structured 6-month t
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/[your-username]/cardea.git
+   git clone https://github.com/danberko/cardea.git
    cd cardea
    ```
 
