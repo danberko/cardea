@@ -54,13 +54,9 @@ export function Header({ onMenuClick }: HeaderProps) {
               onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
             >
               <span className="sr-only">Open user menu</span>
-              <img 
-                className="size-8 rounded-full bg-gray-50" 
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" 
-                alt="" 
-              />
+              <div className="size-8 rounded-full bg-black"></div>
               <span className="hidden lg:flex lg:items-center">
-                <span className="ml-4 text-sm/6 font-semibold text-gray-900" aria-hidden="true">Tom Cook</span>
+                <span className="ml-4 text-sm/6 font-semibold text-gray-900" aria-hidden="true">Dan Berkowitz</span>
                 <svg className="ml-2 size-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
                 </svg>

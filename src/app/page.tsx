@@ -199,7 +199,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset">
-          {exercise.sets}×{exercise.reps}
+          View details
         </div>
       </li>
     ));
@@ -289,7 +289,7 @@ export default function Dashboard() {
                 )}
               </div>
               <div className="ml-6 h-6 w-px bg-gray-300"></div>
-              <button type="button" className="ml-6 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Add event</button>
+              <button type="button" className="ml-6 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Mark complete</button>
             </div>
             <div className="relative ml-6 md:hidden">
               <button type="button" className="-mx-2 flex items-center rounded-full border border-transparent p-2 text-gray-400 hover:text-gray-500" id="menu-0-button" aria-expanded="false" aria-haspopup="true">
