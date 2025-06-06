@@ -1,0 +1,1633 @@
+  {
+    date: "2025-08-27",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-08-28",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 4",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "4", reps: "8–10", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "4", reps: "8–10", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "4", reps: "12–15", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "4", reps: "10–12", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "4", reps: "10–12", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "4", reps: "8–10/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "4", reps: "15–20", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "4", reps: "10–12", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-08-29",
+    dayOfWeek: "Thursday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-08-30",
+    dayOfWeek: "Friday",
+    phase: "Phase 4",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "4", reps: "6–8", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "4", reps: "8–10", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "4", reps: "10–12", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "4", reps: "12–15", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "4", reps: "45–75 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "4", reps: "10–12", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "4", reps: "8–10", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "4", reps: "12–15", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "4", reps: "12–15", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "4", reps: "45 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-08-31",
+    dayOfWeek: "Saturday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-01",
+    dayOfWeek: "Sunday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-02",
+    dayOfWeek: "Monday",
+    phase: "Phase 4",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "4", reps: "6–8", description: "Chest pressing movement - increased intensity" },
+      { name: "Shoulder Press", sets: "4", reps: "8–10", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "4", reps: "10–12", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "4", reps: "10–12", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "4", reps: "8–10", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "4", reps: "8–10", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "4", reps: "10–12", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-03",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-09-04",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 4",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "4", reps: "8–10", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "4", reps: "8–10", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "4", reps: "12–15", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "4", reps: "10–12", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "4", reps: "10–12", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "4", reps: "8–10/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "4", reps: "15–20", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "4", reps: "10–12", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-05",
+    dayOfWeek: "Thursday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-09-06",
+    dayOfWeek: "Friday",
+    phase: "Phase 4",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "4", reps: "6–8", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "4", reps: "8–10", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "4", reps: "10–12", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "4", reps: "12–15", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "4", reps: "45–75 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "4", reps: "10–12", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "4", reps: "8–10", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "4", reps: "12–15", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "4", reps: "12–15", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "4", reps: "45 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-07",
+    dayOfWeek: "Saturday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-08",
+    dayOfWeek: "Sunday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-09",
+    dayOfWeek: "Monday",
+    phase: "Phase 4",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "4", reps: "6–8", description: "Chest pressing movement - increased intensity" },
+      { name: "Shoulder Press", sets: "4", reps: "8–10", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "4", reps: "10–12", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "4", reps: "10–12", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "4", reps: "8–10", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "4", reps: "8–10", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "4", reps: "10–12", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-10",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-09-11",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 4",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "4", reps: "8–10", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "4", reps: "8–10", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "4", reps: "12–15", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "4", reps: "10–12", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "4", reps: "10–12", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "4", reps: "8–10/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "4", reps: "15–20", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "4", reps: "10–12", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-12",
+    dayOfWeek: "Thursday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-09-13",
+    dayOfWeek: "Friday",
+    phase: "Phase 4",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "4", reps: "6–8", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "4", reps: "8–10", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "4", reps: "10–12", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "4", reps: "12–15", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "4", reps: "45–75 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "4", reps: "10–12", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "4", reps: "8–10", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "4", reps: "12–15", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "4", reps: "12–15", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "4", reps: "45 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-14",
+    dayOfWeek: "Saturday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-15",
+    dayOfWeek: "Sunday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-16",
+    dayOfWeek: "Monday",
+    phase: "Phase 4",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "4", reps: "6–8", description: "Chest pressing movement - increased intensity" },
+      { name: "Shoulder Press", sets: "4", reps: "8–10", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "4", reps: "10–12", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "4", reps: "10–12", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "4", reps: "8–10", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "4", reps: "8–10", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "4", reps: "10–12", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-17",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-09-18",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 4",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "4", reps: "8–10", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "4", reps: "8–10", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "4", reps: "12–15", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "4", reps: "10–12", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "4", reps: "10–12", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "4", reps: "8–10/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "4", reps: "15–20", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "4", reps: "10–12", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-19",
+    dayOfWeek: "Thursday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-09-20",
+    dayOfWeek: "Friday",
+    phase: "Phase 4",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "4", reps: "6–8", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "4", reps: "8–10", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "4", reps: "10–12", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "4", reps: "12–15", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "4", reps: "45–75 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "4", reps: "10–12", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "4", reps: "8–10", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "4", reps: "12–15", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "4", reps: "12–15", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "4", reps: "45 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-21",
+    dayOfWeek: "Saturday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-22",
+    dayOfWeek: "Sunday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-23",
+    dayOfWeek: "Monday",
+    phase: "Phase 4",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "4", reps: "6–8", description: "Chest pressing movement - increased intensity" },
+      { name: "Shoulder Press", sets: "4", reps: "8–10", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "4", reps: "10–12", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "4", reps: "10–12", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "4", reps: "8–10", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "4", reps: "8–10", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "4", reps: "10–12", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-24",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-09-25",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 4",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "4", reps: "8–10", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "4", reps: "8–10", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "4", reps: "12–15", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "4", reps: "10–12", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "4", reps: "10–12", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "4", reps: "8–10/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "4", reps: "15–20", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "4", reps: "10–12", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-26",
+    dayOfWeek: "Thursday",
+    phase: "Phase 4",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-09-29",
+    dayOfWeek: "Sunday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-09-30",
+    dayOfWeek: "Monday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "4", reps: "5–7", description: "Chest pressing movement - high intensity" },
+      { name: "Shoulder Press", sets: "4", reps: "6–8", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "4", reps: "8–10", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "4", reps: "8–12", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "4", reps: "6–8", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "4", reps: "6–8", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "4", reps: "8–10", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-01",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-10-02",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "4", reps: "6–8", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "4", reps: "6–8", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "4", reps: "10–12", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "4", reps: "8–10", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "4", reps: "8–10", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "4", reps: "6–8/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "4", reps: "12–15", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "4", reps: "8–10", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-03",
+    dayOfWeek: "Thursday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-10-04",
+    dayOfWeek: "Friday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "4", reps: "5–7", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "4", reps: "6–8", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "4", reps: "8–10", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "4", reps: "10–12", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "4", reps: "60–90 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "4", reps: "8–10", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "4", reps: "6–8", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "4", reps: "10–12", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "4", reps: "10–12", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "4", reps: "60 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-05",
+    dayOfWeek: "Saturday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-06",
+    dayOfWeek: "Sunday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-07",
+    dayOfWeek: "Monday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "4", reps: "5–7", description: "Chest pressing movement - high intensity" },
+      { name: "Shoulder Press", sets: "4", reps: "6–8", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "4", reps: "8–10", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "4", reps: "8–12", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "4", reps: "6–8", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "4", reps: "6–8", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "4", reps: "8–10", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-08",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-10-09",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "4", reps: "6–8", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "4", reps: "6–8", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "4", reps: "10–12", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "4", reps: "8–10", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "4", reps: "8–10", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "4", reps: "6–8/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "4", reps: "12–15", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "4", reps: "8–10", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-10",
+    dayOfWeek: "Thursday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-10-11",
+    dayOfWeek: "Friday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "4", reps: "5–7", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "4", reps: "6–8", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "4", reps: "8–10", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "4", reps: "10–12", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "4", reps: "60–90 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "4", reps: "8–10", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "4", reps: "6–8", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "4", reps: "10–12", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "4", reps: "10–12", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "4", reps: "60 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-12",
+    dayOfWeek: "Saturday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-13",
+    dayOfWeek: "Sunday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-14",
+    dayOfWeek: "Monday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "4", reps: "5–7", description: "Chest pressing movement - high intensity" },
+      { name: "Shoulder Press", sets: "4", reps: "6–8", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "4", reps: "8–10", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "4", reps: "8–12", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "4", reps: "6–8", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "4", reps: "6–8", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "4", reps: "8–10", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-15",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-10-16",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "4", reps: "6–8", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "4", reps: "6–8", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "4", reps: "10–12", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "4", reps: "8–10", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "4", reps: "8–10", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "4", reps: "6–8/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "4", reps: "12–15", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "4", reps: "8–10", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-17",
+    dayOfWeek: "Thursday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-10-18",
+    dayOfWeek: "Friday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "4", reps: "5–7", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "4", reps: "6–8", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "4", reps: "8–10", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "4", reps: "10–12", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "4", reps: "60–90 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "4", reps: "8–10", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "4", reps: "6–8", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "4", reps: "10–12", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "4", reps: "10–12", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "4", reps: "60 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-19",
+    dayOfWeek: "Saturday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-20",
+    dayOfWeek: "Sunday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-21",
+    dayOfWeek: "Monday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "4", reps: "5–7", description: "Chest pressing movement - high intensity" },
+      { name: "Shoulder Press", sets: "4", reps: "6–8", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "4", reps: "8–10", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "4", reps: "8–12", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "4", reps: "6–8", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "4", reps: "6–8", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "4", reps: "8–10", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-22",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-10-23",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "4", reps: "6–8", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "4", reps: "6–8", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "4", reps: "10–12", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "4", reps: "8–10", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "4", reps: "8–10", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "4", reps: "6–8/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "4", reps: "12–15", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "4", reps: "8–10", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-24",
+    dayOfWeek: "Thursday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-10-25",
+    dayOfWeek: "Friday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "4", reps: "5–7", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "4", reps: "6–8", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "4", reps: "8–10", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "4", reps: "10–12", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "4", reps: "60–90 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "4", reps: "8–10", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "4", reps: "6–8", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "4", reps: "10–12", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "4", reps: "10–12", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "4", reps: "60 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-26",
+    dayOfWeek: "Saturday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-27",
+    dayOfWeek: "Sunday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-28",
+    dayOfWeek: "Monday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "4", reps: "5–7", description: "Chest pressing movement - high intensity" },
+      { name: "Shoulder Press", sets: "4", reps: "6–8", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "4", reps: "8–10", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "4", reps: "8–12", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "4", reps: "6–8", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "4", reps: "6–8", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "4", reps: "8–10", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-29",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-10-30",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "4", reps: "6–8", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "4", reps: "6–8", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "4", reps: "10–12", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "4", reps: "8–10", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "4", reps: "8–10", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "4", reps: "6–8/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "4", reps: "12–15", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "4", reps: "8–10", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-10-31",
+    dayOfWeek: "Thursday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-11-01",
+    dayOfWeek: "Friday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "4", reps: "5–7", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "4", reps: "6–8", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "4", reps: "8–10", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "4", reps: "10–12", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "4", reps: "60–90 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "4", reps: "8–10", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "4", reps: "6–8", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "4", reps: "10–12", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "4", reps: "10–12", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "4", reps: "60 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-02",
+    dayOfWeek: "Saturday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-03",
+    dayOfWeek: "Sunday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-04",
+    dayOfWeek: "Monday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "4", reps: "5–7", description: "Chest pressing movement - high intensity" },
+      { name: "Shoulder Press", sets: "4", reps: "6–8", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "4", reps: "8–10", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "4", reps: "8–12", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "4", reps: "6–8", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "4", reps: "6–8", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "4", reps: "8–10", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-05",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-11-06",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "4", reps: "6–8", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "4", reps: "6–8", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "4", reps: "10–12", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "4", reps: "8–10", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "4", reps: "8–10", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "4", reps: "6–8/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "4", reps: "12–15", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "4", reps: "8–10", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-07",
+    dayOfWeek: "Thursday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-11-08",
+    dayOfWeek: "Friday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "4", reps: "5–7", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "4", reps: "6–8", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "4", reps: "8–10", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "4", reps: "10–12", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "4", reps: "60–90 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "4", reps: "8–10", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "4", reps: "6–8", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "4", reps: "10–12", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "4", reps: "10–12", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "4", reps: "60 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-09",
+    dayOfWeek: "Saturday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-10",
+    dayOfWeek: "Sunday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-11",
+    dayOfWeek: "Monday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "4", reps: "5–7", description: "Chest pressing movement - high intensity" },
+      { name: "Shoulder Press", sets: "4", reps: "6–8", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "4", reps: "8–10", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "4", reps: "8–12", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "4", reps: "6–8", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "4", reps: "6–8", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "4", reps: "8–10", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-12",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-11-13",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "4", reps: "6–8", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "4", reps: "6–8", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "4", reps: "10–12", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "4", reps: "8–10", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "4", reps: "8–10", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "4", reps: "6–8/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "4", reps: "12–15", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "4", reps: "8–10", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-14",
+    dayOfWeek: "Thursday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-11-15",
+    dayOfWeek: "Friday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "4", reps: "5–7", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "4", reps: "6–8", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "4", reps: "8–10", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "4", reps: "10–12", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "4", reps: "60–90 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "4", reps: "8–10", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "4", reps: "6–8", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "4", reps: "10–12", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "4", reps: "10–12", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "4", reps: "60 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-16",
+    dayOfWeek: "Saturday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-17",
+    dayOfWeek: "Sunday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-18",
+    dayOfWeek: "Monday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "4", reps: "5–7", description: "Chest pressing movement - high intensity" },
+      { name: "Shoulder Press", sets: "4", reps: "6–8", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "4", reps: "8–10", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "4", reps: "8–12", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "4", reps: "6–8", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "4", reps: "6–8", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "4", reps: "8–10", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-19",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-11-20",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 5",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "4", reps: "6–8", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "4", reps: "6–8", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "4", reps: "10–12", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "4", reps: "8–10", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "4", reps: "8–10", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "4", reps: "6–8/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "4", reps: "12–15", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "4", reps: "8–10", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-21",
+    dayOfWeek: "Thursday",
+    phase: "Phase 5",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-11-24",
+    dayOfWeek: "Sunday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-25",
+    dayOfWeek: "Monday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "5", reps: "4–6", description: "Chest pressing movement - maximum intensity" },
+      { name: "Shoulder Press", sets: "5", reps: "5–7", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "5", reps: "6–8", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "5", reps: "6–10", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "5", reps: "5–7", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "5", reps: "5–7", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "5", reps: "6–8", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-26",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-11-27",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "5", reps: "5–7", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "5", reps: "5–7", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "5", reps: "8–10", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "5", reps: "6–8", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "5", reps: "6–8", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "5", reps: "5–7/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "5", reps: "10–12", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "5", reps: "6–8", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-28",
+    dayOfWeek: "Thursday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-11-29",
+    dayOfWeek: "Friday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "5", reps: "4–6", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "5", reps: "5–7", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "5", reps: "6–8", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "5", reps: "8–10", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "5", reps: "75–120 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "5", reps: "6–8", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "5", reps: "5–7", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "5", reps: "8–10", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "5", reps: "8–10", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "5", reps: "75 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-11-30",
+    dayOfWeek: "Saturday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-01",
+    dayOfWeek: "Sunday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-02",
+    dayOfWeek: "Monday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "5", reps: "4–6", description: "Chest pressing movement - maximum intensity" },
+      { name: "Shoulder Press", sets: "5", reps: "5–7", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "5", reps: "6–8", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "5", reps: "6–10", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "5", reps: "5–7", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "5", reps: "5–7", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "5", reps: "6–8", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-03",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-12-04",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "5", reps: "5–7", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "5", reps: "5–7", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "5", reps: "8–10", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "5", reps: "6–8", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "5", reps: "6–8", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "5", reps: "5–7/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "5", reps: "10–12", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "5", reps: "6–8", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-05",
+    dayOfWeek: "Thursday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-12-06",
+    dayOfWeek: "Friday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "5", reps: "4–6", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "5", reps: "5–7", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "5", reps: "6–8", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "5", reps: "8–10", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "5", reps: "75–120 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "5", reps: "6–8", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "5", reps: "5–7", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "5", reps: "8–10", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "5", reps: "8–10", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "5", reps: "75 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-07",
+    dayOfWeek: "Saturday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-08",
+    dayOfWeek: "Sunday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-09",
+    dayOfWeek: "Monday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "5", reps: "4–6", description: "Chest pressing movement - maximum intensity" },
+      { name: "Shoulder Press", sets: "5", reps: "5–7", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "5", reps: "6–8", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "5", reps: "6–10", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "5", reps: "5–7", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "5", reps: "5–7", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "5", reps: "6–8", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-10",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-12-11",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "5", reps: "5–7", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "5", reps: "5–7", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "5", reps: "8–10", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "5", reps: "6–8", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "5", reps: "6–8", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "5", reps: "5–7/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "5", reps: "10–12", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "5", reps: "6–8", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-12",
+    dayOfWeek: "Thursday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-12-13",
+    dayOfWeek: "Friday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "5", reps: "4–6", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "5", reps: "5–7", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "5", reps: "6–8", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "5", reps: "8–10", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "5", reps: "75–120 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "5", reps: "6–8", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "5", reps: "5–7", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "5", reps: "8–10", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "5", reps: "8–10", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "5", reps: "75 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-14",
+    dayOfWeek: "Saturday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-15",
+    dayOfWeek: "Sunday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-16",
+    dayOfWeek: "Monday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "5", reps: "4–6", description: "Chest pressing movement - maximum intensity" },
+      { name: "Shoulder Press", sets: "5", reps: "5–7", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "5", reps: "6–8", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "5", reps: "6–10", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "5", reps: "5–7", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "5", reps: "5–7", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "5", reps: "6–8", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-17",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-12-18",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "5", reps: "5–7", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "5", reps: "5–7", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "5", reps: "8–10", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "5", reps: "6–8", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "5", reps: "6–8", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "5", reps: "5–7/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "5", reps: "10–12", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "5", reps: "6–8", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-19",
+    dayOfWeek: "Thursday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-12-20",
+    dayOfWeek: "Friday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Squats", sets: "5", reps: "4–6", description: "Lower body compound exercise" },
+      { name: "RDLs", sets: "5", reps: "5–7", description: "Romanian deadlifts for hamstrings" },
+      { name: "Leg Press", sets: "5", reps: "6–8", description: "Machine leg strengthening exercise" },
+      { name: "Calf Raises", sets: "5", reps: "8–10", description: "Calf strengthening exercise" },
+      { name: "Planks", sets: "5", reps: "75–120 sec", description: "Core stability exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Goblet Squats", sets: "5", reps: "6–8", description: "Kettlebell front-loaded squats" },
+      { name: "KB RDLs", sets: "5", reps: "5–7", description: "Kettlebell Romanian deadlifts" },
+      { name: "KB Swings", sets: "5", reps: "8–10", description: "Kettlebell swing exercise" },
+      { name: "V-ups", sets: "5", reps: "8–10", description: "Abdominal strengthening exercise" },
+      { name: "Suitcase Carries", sets: "5", reps: "75 sec/side", description: "Unilateral carry exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-21",
+    dayOfWeek: "Saturday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-22",
+    dayOfWeek: "Sunday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-23",
+    dayOfWeek: "Monday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Bench Press", sets: "5", reps: "4–6", description: "Chest pressing movement - maximum intensity" },
+      { name: "Shoulder Press", sets: "5", reps: "5–7", description: "Overhead shoulder strengthening exercise" },
+      { name: "Triceps Pushdown", sets: "5", reps: "6–8", description: "Cable triceps isolation exercise" },
+    ],
+    homeExercises: [
+      { name: "Push-ups", sets: "5", reps: "6–10", description: "Bodyweight chest and triceps exercise" },
+      { name: "KB Floor Press", sets: "5", reps: "5–7", description: "Kettlebell chest press on floor" },
+      { name: "KB Overhead Press", sets: "5", reps: "5–7", description: "Kettlebell shoulder press" },
+      { name: "KB Triceps Extensions", sets: "5", reps: "6–8", description: "Kettlebell triceps exercise" },
+    ],
+    mobilityExercises: []
+  },
+  {
+    date: "2025-12-24",
+    dayOfWeek: "Tuesday",
+    phase: "Phase 6",
+    gymExercises: [
+    ],
+    homeExercises: [
+    ],
+    mobilityExercises: getMobilityExercises()
+  },
+  {
+    date: "2025-12-25",
+    dayOfWeek: "Wednesday",
+    phase: "Phase 6",
+    cardioGoal: "Run/Treadmill 3+ miles",
+    gymExercises: [
+      { name: "Seated Row", sets: "5", reps: "5–7", description: "Back pulling exercise" },
+      { name: "Lat Pulldown", sets: "5", reps: "5–7", description: "Latissimus dorsi exercise" },
+      { name: "Face Pulls", sets: "5", reps: "8–10", description: "Rear deltoid and upper back exercise" },
+      { name: "Dumbbell Curls", sets: "5", reps: "6–8", description: "Biceps strengthening exercise" },
+    ],
+    homeExercises: [
+      { name: "KB Rows", sets: "5", reps: "6–8", description: "Kettlebell rowing movement" },
+      { name: "KB High Pulls", sets: "5", reps: "5–7/side", description: "Kettlebell pulling exercise" },
+      { name: "Band Pull-aparts", sets: "5", reps: "10–12", description: "Resistance band upper back exercise" },
+      { name: "KB Curls", sets: "5", reps: "6–8", description: "Kettlebell bicep curls" },
+    ],
+    mobilityExercises: []
+  },
