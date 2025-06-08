@@ -1,6 +1,6 @@
 'use client';
 
-import { ExerciseDescription } from '@/data/exerciseDescriptions';
+import { ExerciseDescription, getYouTubeEmbedUrl } from '@/data/exerciseDescriptions';
 
 interface ExerciseDrawerProps {
   isOpen: boolean;
@@ -8,9 +8,13 @@ interface ExerciseDrawerProps {
   exercise: ExerciseDescription | null;
   sets?: number;
   reps?: string;
+  currentIndex: number;
+  totalExercises: number;
+  onPrevious: () => void;
+  onNext: () => void;
 }
 
-export function ExerciseDrawer({ isOpen, onClose, exercise, sets, reps }: ExerciseDrawerProps) {
+export function ExerciseDrawer({ isOpen, onClose, exercise, sets, reps, currentIndex, totalExercises, onPrevious, onNext }: ExerciseDrawerProps) {
   return (
     <div className={`fixed inset-y-0 right-0 z-50 flex max-w-full pl-10 ${isOpen && exercise ? 'pointer-events-auto' : 'pointer-events-none'}`}>
       <div className={`w-screen max-w-md transform transition-transform ease-in-out duration-500 ${isOpen && exercise ? 'translate-x-0' : 'translate-x-full'}`}>
@@ -66,25 +70,60 @@ export function ExerciseDrawer({ isOpen, onClose, exercise, sets, reps }: Exerci
                  <h3 className="text-sm font-medium text-gray-900 mb-3">How to Perform</h3>
                  <p className="text-sm text-gray-600 leading-6">{exercise?.howToPerform || ''}</p>
                </div>
+
+               {/* Video */}
+               {exercise?.videoUrl && (
+                 <div className="mb-6">
+                   <h3 className="text-sm font-medium text-gray-900 mb-3">Video Demonstration</h3>
+                   <div className="w-full aspect-video">
+                     <iframe
+                       src={getYouTubeEmbedUrl(exercise.videoUrl)}
+                       title={`${exercise.name} exercise demonstration`}
+                       className="w-full h-full rounded-lg"
+                       frameBorder="0"
+                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                       allowFullScreen
+                       loading="lazy"
+                       referrerPolicy="strict-origin-when-cross-origin"
+                     ></iframe>
+                   </div>
+                 </div>
+               )}
             </div>
 
             {/* Footer */}
-            <div className="flex flex-shrink-0 justify-end px-4 py-4 sm:px-6">
-                             <button
-                 type="button"
-                 className="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 cursor-pointer"
-                 onClick={onClose}
-               >
-                 Close
-               </button>
-               <button
-                 type="button"
-                 className="ml-4 inline-flex justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer"
-                 onClick={onClose}
-               >
-                 Got it
-               </button>
-                         </div>
+            <div className="flex flex-shrink-0 items-center justify-between px-4 py-4 sm:px-6">
+              {/* Exercise counter */}
+              <div className="text-sm text-gray-500">
+                {currentIndex + 1} of {totalExercises}
+              </div>
+              
+              {/* Navigation buttons */}
+              <div className="flex space-x-3">
+                <button
+                  type="button"
+                  className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                  onClick={onPrevious}
+                  disabled={currentIndex === 0}
+                >
+                  <svg className="-ml-0.5 mr-1.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                  onClick={onNext}
+                  disabled={currentIndex === totalExercises - 1}
+                >
+                  Next
+                  <svg className="ml-1.5 -mr-0.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
            </div>
          </div>
        </div>

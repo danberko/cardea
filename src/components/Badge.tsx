@@ -23,7 +23,7 @@ export function Badge({ children, color = 'gray', className = '' }: BadgeProps) 
   const dotColor = colorMap[color];
   
   return (
-    <span className={`inline-flex items-center gap-x-1.5 rounded-full px-2 py-1 text-xs font-medium text-gray-900 ring-1 ring-gray-200 ring-inset ${className}`}>
+    <span className={`inline-flex items-center gap-x-1.5 rounded-full bg-white px-2 py-1 text-xs font-medium text-gray-900 ring-1 ring-gray-200 ring-inset ${className}`}>
       <svg className={`size-1.5 ${dotColor}`} viewBox="0 0 6 6" aria-hidden="true">
         <circle cx="3" cy="3" r="3" />
       </svg>

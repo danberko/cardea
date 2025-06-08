@@ -7,6 +7,7 @@ import { getCurrentPhase } from '@/data/trainingPhases';
 import { getExercisesForDate, Exercise } from '@/data/exercises';
 import { getExerciseDescription, ExerciseDescription } from '@/data/exerciseDescriptions';
 import { useState } from 'react';
+import confetti from 'canvas-confetti';
 
 export default function Dashboard() {
   // State for dropdown
@@ -18,6 +19,8 @@ export default function Dashboard() {
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedExercise, setSelectedExercise] = useState<{exercise: ExerciseDescription, sets: number, reps: string} | null>(null);
+  const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
+  const [activeExerciseName, setActiveExerciseName] = useState<string | null>(null);
 
   // Get current date and phase
   const today = new Date();
@@ -153,10 +156,12 @@ export default function Dashboard() {
     setCalendarViewDate(nextMonth);
   };
 
-  const handleViewDetails = (exerciseName: string, sets: number, reps: string) => {
+  const handleViewDetails = (exerciseName: string, sets: string, reps: string, exerciseIndex: number) => {
     const exerciseDetails = getExerciseDescription(exerciseName);
     if (exerciseDetails) {
-      setSelectedExercise({ exercise: exerciseDetails, sets, reps });
+      setSelectedExercise({ exercise: exerciseDetails, sets: parseInt(sets), reps });
+      setCurrentExerciseIndex(exerciseIndex);
+      setActiveExerciseName(exerciseName);
       setIsModalOpen(true);
     }
   };
@@ -164,6 +169,78 @@ export default function Dashboard() {
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setSelectedExercise(null);
+    setCurrentExerciseIndex(0);
+    setActiveExerciseName(null);
+  };
+
+  const handlePreviousExercise = () => {
+    const exercises = getFilteredExercises();
+    if (currentExerciseIndex > 0) {
+      const newIndex = currentExerciseIndex - 1;
+      const exercise = exercises[newIndex];
+      const exerciseDetails = getExerciseDescription(exercise.name);
+      if (exerciseDetails) {
+        setSelectedExercise({ exercise: exerciseDetails, sets: parseInt(exercise.sets), reps: exercise.reps });
+        setCurrentExerciseIndex(newIndex);
+        setActiveExerciseName(exercise.name);
+      }
+    }
+  };
+
+  const handleNextExercise = () => {
+    const exercises = getFilteredExercises();
+    if (currentExerciseIndex < exercises.length - 1) {
+      const newIndex = currentExerciseIndex + 1;
+      const exercise = exercises[newIndex];
+      const exerciseDetails = getExerciseDescription(exercise.name);
+      if (exerciseDetails) {
+        setSelectedExercise({ exercise: exerciseDetails, sets: parseInt(exercise.sets), reps: exercise.reps });
+        setCurrentExerciseIndex(newIndex);
+        setActiveExerciseName(exercise.name);
+      }
+    }
+  };
+
+  const handleMarkComplete = () => {
+    const count = 200;
+    const defaults = {
+      origin: { y: 0.7 },
+    };
+
+    function fire(particleRatio: number, opts: object) {
+      confetti(
+        Object.assign({}, defaults, opts, {
+          particleCount: Math.floor(count * particleRatio),
+        })
+      );
+    }
+
+    fire(0.25, {
+      spread: 26,
+      startVelocity: 55,
+    });
+
+    fire(0.2, {
+      spread: 60,
+    });
+
+    fire(0.35, {
+      spread: 100,
+      decay: 0.91,
+      scalar: 0.8,
+    });
+
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 25,
+      decay: 0.92,
+      scalar: 1.2,
+    });
+
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 45,
+    });
   };
 
   // Function to get phase color based on phase name
@@ -191,11 +268,173 @@ export default function Dashboard() {
     }
   };
 
+  // Function to get appropriate icon for exercise type
+  const getExerciseIcon = (exerciseName: string) => {
+    const name = exerciseName.toLowerCase();
+    
+    // Chest exercises
+    if (name.includes('bench press') || name.includes('push-up') || name.includes('floor press')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      );
+    }
+    
+    // Shoulder exercises
+    if (name.includes('shoulder press') || name.includes('overhead press') || name.includes('wall angels')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11l5-5m0 0l5 5m-5-5v12" />
+        </svg>
+      );
+    }
+    
+    // Back/Pulling exercises
+    if (name.includes('row') || name.includes('pulldown') || name.includes('pull-apart') || name.includes('face pull') || name.includes('lat')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+        </svg>
+      );
+    }
+    
+    // Bicep/Curl exercises
+    if (name.includes('curl')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.2 5.5-6 0-1.2-.5-2.3-1.3-3.2.4-1.1.4-2.4-.1-3.5 0 0-1.1-.3-3.5 1.3-2.1-.6-4.3-.6-6.4 0C6.5 2.8 5.4 3.1 5.4 3.1c-.5 1.1-.5 2.4-.1 3.5C4.5 7.5 4 8.6 4 9.8c0 4.8 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V19" />
+        </svg>
+      );
+    }
+    
+    // Tricep exercises
+    if (name.includes('tricep') || name.includes('pushdown') || name.includes('extension')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      );
+    }
+    
+    // Leg exercises
+    if (name.includes('squat') || name.includes('leg press') || name.includes('lunge')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+        </svg>
+      );
+    }
+    
+    // RDL/Deadlift exercises
+    if (name.includes('rdl') || name.includes('deadlift')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+        </svg>
+      );
+    }
+    
+    // Calf exercises
+    if (name.includes('calf')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+        </svg>
+      );
+    }
+    
+    // Core/Ab exercises
+    if (name.includes('plank') || name.includes('v-up') || name.includes('dead bug') || name.includes('bird dog') || name.includes('side plank')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+        </svg>
+      );
+    }
+    
+    // KB Swings
+    if (name.includes('swing')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      );
+    }
+    
+    // Carry exercises
+    if (name.includes('carry')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+      );
+    }
+    
+    // Mobility/Stretch exercises
+    if (name.includes('cat-cow') || name.includes('rotation') || name.includes('stretch') || name.includes('hip switch') || name.includes('ankle rock')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+      );
+    }
+    
+    // Arm circles
+    if (name.includes('arm circle')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 2v20M14 2v20M4 7l4 5-4 5M20 7l-4 5 4 5" />
+        </svg>
+      );
+    }
+    
+    // Glute bridge
+    if (name.includes('glute bridge') || name.includes('bridge')) {
+      return (
+        <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
+        </svg>
+      );
+    }
+    
+    // Default exercise icon (lightning bolt)
+    return (
+      <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    );
+  };
+
   // Function to render exercise list
   const renderExercises = () => {
     const exercises = getFilteredExercises();
+    const items = [];
+    
+    // Add cardio goal as first item if it exists
+    if (daySchedule?.cardioGoal) {
+      items.push(
+        <li key="cardio-goal" className="flex items-center justify-between gap-x-6 py-5 px-4 mx-2 rounded-lg">
+          <div className="flex min-w-0 gap-x-4">
+            <div className="size-12 flex-none rounded-lg bg-gray-100 flex items-center justify-center">
+              <svg className="size-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+            <div className="min-w-0 flex-auto">
+              <p className="text-sm/6 font-semibold text-gray-900">Run/Treadmill/Elliptical</p>
+              <p className="mt-1 text-xs/5 text-gray-600">3 miles or more</p>
+              <p className="text-xs/5 text-gray-500">Cardio exercise</p>
+            </div>
+          </div>
+        </li>
+      );
+    }
     
     if (exercises.length === 0) {
+      if (items.length > 0) {
+        return items; // Return cardio goal only
+      }
       return (
         <li className="py-8 text-center">
           <p className="text-gray-500">No {selectedView.toLowerCase()} scheduled for this date</p>
@@ -203,30 +442,42 @@ export default function Dashboard() {
       );
     }
 
-    return exercises.map((exercise, index) => (
-      <li key={index} className="flex items-center justify-between gap-x-6 py-5">
-        <div className="flex min-w-0 gap-x-4">
-          <div className="size-12 flex-none rounded-lg bg-gray-100 flex items-center justify-center">
-            <svg className="size-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
+    // Add exercises
+    const exerciseItems = exercises.map((exercise, index) => {
+      const isActive = isModalOpen && activeExerciseName === exercise.name;
+      
+      return (
+        <li key={index} className={`flex items-center justify-between gap-x-6 py-5 px-4 mx-2 rounded-lg transition-all duration-200 ${isActive ? 'bg-indigo-50 border border-indigo-200 shadow-sm' : ''}`}>
+          <div className="flex min-w-0 gap-x-4">
+            <div className={`size-12 flex-none rounded-lg flex items-center justify-center ${isActive ? 'bg-indigo-100' : 'bg-gray-100'}`}>
+              <div className={`${isActive ? 'text-indigo-600' : 'text-gray-400'}`}>
+                {getExerciseIcon(exercise.name)}
+              </div>
+            </div>
+            <div className="min-w-0 flex-auto">
+              <p className={`text-sm/6 font-semibold ${isActive ? 'text-indigo-900' : 'text-gray-900'}`}>{exercise.name}</p>
+              <p className={`mt-1 text-xs/5 ${isActive ? 'text-indigo-700' : 'text-gray-600'}`}>{exercise.sets} sets × {exercise.reps}</p>
+              {exercise.description && (
+                <p className={`mt-1 truncate text-xs/5 ${isActive ? 'text-indigo-600' : 'text-gray-500'}`}>{exercise.description}</p>
+              )}
+            </div>
           </div>
-          <div className="min-w-0 flex-auto">
-            <p className="text-sm/6 font-semibold text-gray-900">{exercise.name}</p>
-            <p className="mt-1 text-xs/5 text-gray-600">{exercise.sets} sets × {exercise.reps}</p>
-            {exercise.description && (
-              <p className="mt-1 truncate text-xs/5 text-gray-500">{exercise.description}</p>
-            )}
-          </div>
-        </div>
-        <button 
-          onClick={() => handleViewDetails(exercise.name, exercise.sets, exercise.reps)}
-          className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50 transition-colors cursor-pointer"
-        >
-          View details
-        </button>
-      </li>
-    ));
+          <button 
+            onClick={() => handleViewDetails(exercise.name, exercise.sets, exercise.reps, index)}
+            className={`rounded-full px-2.5 py-1 text-xs font-semibold shadow-xs ring-1 ring-inset transition-colors cursor-pointer ${
+              isActive 
+                ? 'bg-indigo-600 text-white ring-indigo-600 hover:bg-indigo-700' 
+                : 'bg-white text-gray-900 ring-gray-300 hover:bg-gray-50'
+            }`}
+          >
+            {isActive ? 'Currently viewing' : 'View details'}
+          </button>
+        </li>
+      );
+    });
+
+    // Return combined items
+    return [...items, ...exerciseItems];
   };
 
   return (
@@ -290,8 +541,7 @@ export default function Dashboard() {
                   </svg>
                 </button>
 
-                {isDropdownOpen && (
-                  <div className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
+                <div className={`absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transform transition-all duration-200 ease-out ${isDropdownOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`} role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
                     <div className="py-1" role="none">
                       <button
                         className={`${selectedView === 'Home Exercise' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'} block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-900 cursor-pointer`}
@@ -310,10 +560,9 @@ export default function Dashboard() {
 
                     </div>
                   </div>
-                )}
               </div>
               <div className="ml-6 h-6 w-px bg-gray-300"></div>
-              <button type="button" className="ml-6 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer">Mark complete</button>
+              <button type="button" className="ml-6 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer" onClick={handleMarkComplete}>Mark complete</button>
             </div>
             <div className="relative ml-6 md:hidden">
               <button type="button" className="-mx-2 flex items-center rounded-full border border-transparent p-2 text-gray-400 hover:text-gray-500" id="menu-0-button" aria-expanded="false" aria-haspopup="true">
@@ -328,14 +577,6 @@ export default function Dashboard() {
         <div className="isolate flex flex-1 overflow-hidden bg-white">
           <div className="flex flex-1 flex-col">
             <div className="flex-1 overflow-y-auto p-6">
-              {/* Cardio Goal Section */}
-              {daySchedule?.cardioGoal && (
-                <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                  <h3 className="text-sm font-semibold text-blue-900 mb-1">Cardio Goal</h3>
-                  <p className="text-sm text-blue-700">{daySchedule.cardioGoal}</p>
-                </div>
-              )}
-              
               {/* Exercise List */}
               <ul role="list" className="divide-y divide-gray-100">
                 {daySchedule ? renderExercises() : (
@@ -437,6 +678,47 @@ export default function Dashboard() {
                 );
               })}
             </div>
+            
+            {/* Fitness Stats Card */}
+            <div className="mt-8">
+              <div className="overflow-hidden rounded-xl border border-gray-200">
+                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
+                  <div className="size-12 flex-none rounded-lg bg-indigo-600 flex items-center justify-center ring-1 ring-gray-900/10">
+                    <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div className="text-sm/6 font-medium text-gray-900">Cardea Fitness</div>
+                  <div className="relative ml-auto">
+                    <button type="button" className="-m-2.5 block p-2.5 text-gray-400 hover:text-gray-500 cursor-pointer" id="options-menu-0-button" aria-expanded="false" aria-haspopup="true">
+                      <span className="sr-only">Open options</span>
+                      <svg className="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path d="M3 10a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM8.5 10a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM15.5 8.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <dl className="-my-3 divide-y divide-gray-100 px-6 py-4 text-sm/6">
+                  <div className="flex justify-between gap-x-4 py-3">
+                    <dt className="text-gray-500">Current Phase</dt>
+                    <dd className="text-gray-700">{currentPhase.phase}</dd>
+                  </div>
+                  <div className="flex justify-between gap-x-4 py-3">
+                    <dt className="text-gray-500">Workout Day</dt>
+                    <dd className="flex items-start gap-x-2">
+                      <div className="font-medium text-gray-900">{currentDay}</div>
+                      <div className={`rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ${daySchedule ? 'bg-green-50 text-green-700 ring-green-600/20' : 'bg-gray-50 text-gray-700 ring-gray-600/20'}`}>
+                        {daySchedule ? 'Active' : 'Rest Day'}
+                      </div>
+                    </dd>
+                  </div>
+                  <div className="flex justify-between gap-x-4 py-3">
+                    <dt className="text-gray-500">Exercise Count</dt>
+                    <dd className="text-gray-700">{getFilteredExercises().length} exercises</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -448,6 +730,10 @@ export default function Dashboard() {
         exercise={selectedExercise?.exercise || null}
         sets={selectedExercise?.sets}
         reps={selectedExercise?.reps}
+        currentIndex={currentExerciseIndex}
+        totalExercises={getFilteredExercises().length}
+        onPrevious={handlePreviousExercise}
+        onNext={handleNextExercise}
       />
     </DashboardLayout>
   );

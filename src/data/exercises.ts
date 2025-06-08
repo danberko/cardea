@@ -17,13 +17,13 @@ export interface DaySchedule {
 
 // Helper function to get mobility exercises
 const getMobilityExercises = (): Exercise[] => [
-  { name: "Shoulder Rolls", sets: "2", reps: "10 each direction", description: "Shoulder mobility warm-up" },
-  { name: "Neck Stretches", sets: "2", reps: "30 sec each direction", description: "Neck and upper trap stretches" },
-  { name: "Cat-Cow Stretches", sets: "2", reps: "10", description: "Spinal mobility exercise" },
-  { name: "Hip Circles", sets: "2", reps: "10 each direction", description: "Hip mobility exercise" },
-  { name: "Leg Swings", sets: "2", reps: "10 each leg", description: "Dynamic leg mobility" },
-  { name: "Torso Twists", sets: "2", reps: "10 each side", description: "Spinal rotation mobility" },
-  { name: "Calf Stretches", sets: "2", reps: "30 sec each leg", description: "Calf and achilles stretches" }
+  { name: "Cat-Cow", sets: "2", reps: "10", description: "Spinal mobility exercise moving between flexion and extension" },
+  { name: "T-Spine Rotations", sets: "2", reps: "10 each side", description: "Improves thoracic spine mobility and rotation" },
+  { name: "Arm Circles", sets: "2", reps: "20 sec each direction", description: "Warms up and loosens shoulder joints" },
+  { name: "Wall Angels", sets: "2", reps: "10", description: "Strengthens postural muscles and shoulder mobility" },
+  { name: "World's Greatest Stretch", sets: "2", reps: "5 each side", description: "Full-body dynamic stretch that targets hips, spine, and hamstrings" },
+  { name: "90/90 Hip Switches", sets: "2", reps: "10", description: "Improves internal and external hip rotation" },
+  { name: "Ankle Rocking", sets: "2", reps: "10 each side", description: "Improves ankle dorsiflexion for better squats and running" }
 ];
 
 // Generate comprehensive exercise schedule
