@@ -3,14 +3,17 @@
 import { DashboardLayout } from '@/components/DashboardLayout';
 import { Badge, BadgeColor } from '@/components/Badge';
 import { ExerciseDrawer } from '@/components/ExerciseDrawer';
+import { Activity } from '@/components/Activity';
 import { getCurrentPhase } from '@/data/trainingPhases';
 import { getExercisesForDate, Exercise } from '@/data/exercises';
 import { getExerciseDescription, ExerciseDescription } from '@/data/exerciseDescriptions';
+import { getNutritionPlan } from '@/data/nutrition';
 import { useState } from 'react';
 import confetti from 'canvas-confetti';
 
 export default function Dashboard() {
-  // State for dropdown
+  // State for dropdown and navigation
+  const [currentPage, setCurrentPage] = useState('Dashboard');
   const [selectedView, setSelectedView] = useState('Home Exercise');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date(2025, 5, 9)); // Year, Month (0-based), Day - June 9 = Monday
@@ -21,6 +24,7 @@ export default function Dashboard() {
   const [selectedExercise, setSelectedExercise] = useState<{exercise: ExerciseDescription, sets: number, reps: string} | null>(null);
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
   const [activeExerciseName, setActiveExerciseName] = useState<string | null>(null);
+  const [completedDates, setCompletedDates] = useState<Set<string>>(new Set());
 
   // Get current date and phase
   const today = new Date();
@@ -35,6 +39,15 @@ export default function Dashboard() {
   
   // Get exercises for selected date
   const daySchedule = getExercisesForDate(selectedDateISO);
+  
+  // Get nutrition plan for current phase (extract just the phase number)
+  const phaseNumber = currentPhase.phase.split(':')[0]; // Extract "Phase 1" from "Phase 1: Reboot & Foundation"
+  const nutritionPlan = getNutritionPlan(phaseNumber);
+  
+  // Check if current selected date is completed
+  const isCompleted = completedDates.has(selectedDateISO);
+  
+
   
   // Display format for header
   const shortDateFormat = selectedDate.toLocaleDateString('en-US', { 
@@ -202,45 +215,61 @@ export default function Dashboard() {
   };
 
   const handleMarkComplete = () => {
-    const count = 200;
-    const defaults = {
-      origin: { y: 0.7 },
-    };
-
-    function fire(particleRatio: number, opts: object) {
-      confetti(
-        Object.assign({}, defaults, opts, {
-          particleCount: Math.floor(count * particleRatio),
-        })
-      );
+    // Toggle completion state for the selected date
+    const newCompletedDates = new Set(completedDates);
+    
+    if (isCompleted) {
+      // Remove from completed dates
+      newCompletedDates.delete(selectedDateISO);
+    } else {
+      // Add to completed dates
+      newCompletedDates.add(selectedDateISO);
     }
+    
+    setCompletedDates(newCompletedDates);
+    
+    // Only fire confetti when marking as complete (not when uncompleting)
+    if (!isCompleted) {
+      const count = 200;
+      const defaults = {
+        origin: { y: 0.7 },
+      };
 
-    fire(0.25, {
-      spread: 26,
-      startVelocity: 55,
-    });
+      function fire(particleRatio: number, opts: object) {
+        confetti(
+          Object.assign({}, defaults, opts, {
+            particleCount: Math.floor(count * particleRatio),
+          })
+        );
+      }
 
-    fire(0.2, {
-      spread: 60,
-    });
+      fire(0.25, {
+        spread: 26,
+        startVelocity: 55,
+      });
 
-    fire(0.35, {
-      spread: 100,
-      decay: 0.91,
-      scalar: 0.8,
-    });
+      fire(0.2, {
+        spread: 60,
+      });
 
-    fire(0.1, {
-      spread: 120,
-      startVelocity: 25,
-      decay: 0.92,
-      scalar: 1.2,
-    });
+      fire(0.35, {
+        spread: 100,
+        decay: 0.91,
+        scalar: 0.8,
+      });
 
-    fire(0.1, {
-      spread: 120,
-      startVelocity: 45,
-    });
+      fire(0.1, {
+        spread: 120,
+        startVelocity: 25,
+        decay: 0.92,
+        scalar: 1.2,
+      });
+
+      fire(0.1, {
+        spread: 120,
+        startVelocity: 45,
+      });
+    }
   };
 
   // Function to get phase color based on phase name
@@ -480,8 +509,17 @@ export default function Dashboard() {
     return [...items, ...exerciseItems];
   };
 
+    // Render different pages based on currentPage state
+  if (currentPage === 'Activity') {
+    return (
+      <DashboardLayout onNavigate={setCurrentPage} currentPage={currentPage}>
+        <Activity completedDates={completedDates} />
+      </DashboardLayout>
+    );
+  }
+
   return (
-    <DashboardLayout>
+    <DashboardLayout onNavigate={setCurrentPage} currentPage={currentPage}>
       <div className="flex h-full flex-col border border-gray-200 rounded-lg overflow-hidden">
         <header className="flex flex-none items-center justify-between border-b border-gray-200 px-6 py-4">
           <div>
@@ -562,7 +600,22 @@ export default function Dashboard() {
                   </div>
               </div>
               <div className="ml-6 h-6 w-px bg-gray-300"></div>
-              <button type="button" className="ml-6 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer" onClick={handleMarkComplete}>Mark complete</button>
+              <button 
+                type="button" 
+                className={`ml-6 rounded-md px-3 py-2 text-sm font-semibold shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 cursor-pointer inline-flex items-center gap-x-1.5 ${
+                  isCompleted 
+                    ? 'bg-green-600 text-white hover:bg-green-500 focus-visible:outline-green-500' 
+                    : 'bg-indigo-600 text-white hover:bg-indigo-500 focus-visible:outline-indigo-500'
+                }`}
+                onClick={handleMarkComplete}
+              >
+                {isCompleted && (
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                )}
+                {isCompleted ? 'Completed' : 'Mark complete'}
+              </button>
             </div>
             <div className="relative ml-6 md:hidden">
               <button type="button" className="-mx-2 flex items-center rounded-full border border-transparent p-2 text-gray-400 hover:text-gray-500" id="menu-0-button" aria-expanded="false" aria-haspopup="true">
@@ -575,19 +628,7 @@ export default function Dashboard() {
           </div>
         </header>
         <div className="isolate flex flex-1 overflow-hidden bg-white">
-          <div className="flex flex-1 flex-col">
-            <div className="flex-1 overflow-y-auto p-6">
-              {/* Exercise List */}
-              <ul role="list" className="divide-y divide-gray-100">
-                {daySchedule ? renderExercises() : (
-                  <li className="py-8 text-center">
-                    <p className="text-gray-500">No exercises scheduled for this date</p>
-                  </li>
-                )}
-              </ul>
-            </div>
-          </div>
-          <div className="hidden w-1/2 max-w-md flex-none border-l border-gray-100 px-8 py-10 md:block">
+          <div className="hidden w-1/2 max-w-md flex-none border-r border-gray-100 px-8 py-10 md:block overflow-y-auto">
             <div className="flex items-center text-center text-gray-900">
               <button 
                 type="button" 
@@ -633,9 +674,14 @@ export default function Dashboard() {
                 if (isLastRow && isFirstInRow) roundedClass = 'rounded-bl-lg';
                 if (isLastRow && isLastInRow) roundedClass = 'rounded-br-lg';
                 
+                // Check if this day is completed
+                const isDateCompleted = completedDates.has(day.dateTime);
+                
                 const buttonClasses = [
                   roundedClass,
-                  day.isCurrentMonth ? 'bg-white text-gray-900' : 'bg-gray-50 text-gray-400',
+                  day.isCurrentMonth 
+                    ? (isDateCompleted ? 'bg-green-50 text-gray-900' : 'bg-white text-gray-900')
+                    : 'bg-gray-50 text-gray-400',
                   'py-1.5 hover:bg-gray-100 focus:z-10'
                 ].filter(Boolean).join(' ');
                 
@@ -705,19 +751,59 @@ export default function Dashboard() {
                   </div>
                   <div className="flex justify-between gap-x-4 py-3">
                     <dt className="text-gray-500">Workout Day</dt>
-                    <dd className="flex items-start gap-x-2">
-                      <div className="font-medium text-gray-900">{currentDay}</div>
-                      <div className={`rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ${daySchedule ? 'bg-green-50 text-green-700 ring-green-600/20' : 'bg-gray-50 text-gray-700 ring-gray-600/20'}`}>
-                        {daySchedule ? 'Active' : 'Rest Day'}
-                      </div>
-                    </dd>
+                    <dd className="text-gray-700">{currentDay}</dd>
                   </div>
                   <div className="flex justify-between gap-x-4 py-3">
                     <dt className="text-gray-500">Exercise Count</dt>
                     <dd className="text-gray-700">{getFilteredExercises().length} exercises</dd>
                   </div>
+                  {/* Nutrition Information */}
+                  <div className="flex justify-between gap-x-4 py-3">
+                    <dt className="text-gray-500">Calories</dt>
+                    <dd className="text-gray-700">{nutritionPlan?.calories || 'N/A'}</dd>
+                  </div>
+                  <div className="flex justify-between gap-x-4 py-3">
+                    <dt className="text-gray-500">Protein</dt>
+                    <dd className="text-gray-700">{nutritionPlan?.protein || 'N/A'}</dd>
+                  </div>
+                  <div className="flex justify-between gap-x-4 py-3">
+                    <dt className="text-gray-500">Carbs</dt>
+                    <dd className="text-gray-700">{nutritionPlan?.carbs || 'N/A'}</dd>
+                  </div>
+                  <div className="flex justify-between gap-x-4 py-3">
+                    <dt className="text-gray-500">Fat</dt>
+                    <dd className="text-gray-700">{nutritionPlan?.fat || 'N/A'}</dd>
+                  </div>
+                  <div className="flex justify-between gap-x-4 py-3">
+                    <dt className="text-gray-500">Water</dt>
+                    <dd className="text-gray-700">{nutritionPlan?.water || 'N/A'}</dd>
+                  </div>
+                  <div className="flex justify-between gap-x-4 py-3">
+                    <dt className="text-gray-500">Sleep</dt>
+                    <dd className="text-gray-700">{nutritionPlan?.sleep || 'N/A'}</dd>
+                  </div>
+                  <div className="flex justify-between gap-x-4 py-3">
+                    <dt className="text-gray-500">Weight Loss Goal</dt>
+                    <dd className="text-gray-700">{nutritionPlan?.weightLoss || 'N/A'}</dd>
+                  </div>
+                  <div className="flex justify-between gap-x-4 py-3">
+                    <dt className="text-gray-500">Zepbound</dt>
+                    <dd className="text-gray-700">{nutritionPlan?.zepbound || 'N/A'}</dd>
+                  </div>
                 </dl>
               </div>
+            </div>
+          </div>
+          <div className="flex flex-1 flex-col">
+            <div className="flex-1 overflow-y-auto p-6">
+              {/* Exercise List */}
+              <ul role="list" className="divide-y divide-gray-100">
+                {daySchedule ? renderExercises() : (
+                  <li className="py-8 text-center">
+                    <p className="text-gray-500">No exercises scheduled for this date</p>
+                  </li>
+                )}
+              </ul>
             </div>
           </div>
         </div>

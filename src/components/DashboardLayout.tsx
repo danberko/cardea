@@ -7,18 +7,25 @@ import { Header } from './Header';
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
+  onNavigate?: (page: string) => void;
+  currentPage?: string;
 }
 
-export function DashboardLayout({ children }: DashboardLayoutProps) {
+export function DashboardLayout({ children, onNavigate, currentPage }: DashboardLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <div className="bg-gray-50 h-screen overflow-hidden">
       {/* Mobile sidebar */}
-      <MobileSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <MobileSidebar 
+        isOpen={sidebarOpen} 
+        onClose={() => setSidebarOpen(false)} 
+        currentPage={currentPage}
+        onNavigate={onNavigate}
+      />
 
       {/* Desktop sidebar */}
-      <Sidebar />
+      <Sidebar onNavigate={onNavigate} currentPage={currentPage} />
 
       <div className="lg:pl-20 h-full flex flex-col">
         {/* Header */}

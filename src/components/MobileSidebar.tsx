@@ -1,11 +1,13 @@
-import { navigation, classNames } from './navigation';
+import { getNavigation, classNames } from './navigation';
 
 interface MobileSidebarProps {
   isOpen: boolean;
   onClose: () => void;
+  currentPage?: string;
+  onNavigate?: (page: string) => void;
 }
 
-export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
+export function MobileSidebar({ isOpen, onClose, currentPage = 'Dashboard', onNavigate }: MobileSidebarProps) {
   if (!isOpen) return null;
 
   return (
@@ -37,20 +39,23 @@ export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
             </div>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="-mx-2 flex-1 space-y-1">
-                {navigation.map((item) => (
+                {getNavigation(currentPage).map((item) => (
                   <li key={item.name}>
-                                          <a
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? 'bg-indigo-50 text-indigo-600'
-                            : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                          'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold cursor-pointer'
-                        )}
-                      >
+                    <button
+                      onClick={() => {
+                        onNavigate?.(item.name);
+                        onClose();
+                      }}
+                      className={classNames(
+                        item.current
+                          ? 'bg-indigo-50 text-indigo-600'
+                          : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
+                        'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold cursor-pointer w-full text-left'
+                      )}
+                    >
                       <item.icon className="size-6 shrink-0" aria-hidden="true" />
                       {item.name}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
